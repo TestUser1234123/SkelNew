@@ -1,0 +1,21 @@
+{
+  "name": "FileUploadSystem",
+  "version": "0.0.3",
+  "description": "File upload system",
+  "main": "server.js",
+  "author": "IK",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "jade": "^1.11.0",
+    "mongoose": "^5.2.13",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sha1": "^1.1.1",
+    "stylus": "^0.54.5",
+    "uuid": "^3.3.2"
+  }
+}

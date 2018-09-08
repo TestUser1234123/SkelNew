@@ -1,0 +1,7 @@
+change db connection string
+check if you use last two 'use's in express.js
+in package.json change - the name of the application
+in bower.json change - the name of the application
+
+IN CONFIG AUTH you have a todo
+IN Server controllers UsersControllers you have a TODO

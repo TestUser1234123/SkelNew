@@ -1,0 +1,20 @@
+doctype
+html
+    head
+        title Telerik File Upload System
+        link(rel="stylesheet" href="/lib/bootstrap/dist/bootstrap.css")
+        link(rel="stylesheet" href="/css/site.css")
+    body
+        div hi from layout
+
+        .container
+            if (errorMessage)
+                .alert.alert-danger #{errorMessage}
+
+            block main-content
+
+        footer
+            p.text-center
+                | &copy; Telerik Academy 2014
+
+        include scripts
