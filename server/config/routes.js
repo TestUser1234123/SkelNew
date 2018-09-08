@@ -1,19 +1,23 @@
-var auth = require('./auth'),
-    controllers = require('../controllers');
+(function() {
+    'use strict';
 
-module.exports = function(app) {
-    app.get('/register', controllers.users.getRegister);
-    app.post('/register', controllers.users.postRegister);
+    let auth = require('./auth'),
+        controllers = require('../controllers');
 
-    app.get('/login', controllers.users.getLogin);
-    app.post('/login', auth.login);
-    app.get('/logout', auth.logout);
+    module.exports = function(app) {
+        app.get('/register', controllers.users.getRegister);
+        app.post('/register', controllers.users.postRegister);
 
-    app.get('/', function(req, res) {
-        res.render('index', {currentUser: req.user});
-    });
+        app.get('/login', controllers.users.getLogin);
+        app.post('/login', auth.login);
+        app.get('/logout', auth.logout);
 
-    app.get('*', function(req, res) {
-        res.render('index', {currentUser: req.user});
-    });
-};
+        app.get('/', function(req, res) {
+            res.render('index', {currentUser: req.user});
+        });
+
+        app.get('*', function(req, res) {
+            res.render('index', {currentUser: req.user});
+        });
+    };
+}());

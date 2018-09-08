@@ -1,7 +1,10 @@
-var User = require('mongoose').model('User');
+(function() {
+    'use strict';
+    let User = require('mongoose').model('User');
 
-module.exports = {
-    create: function(user, callback) {
-        User.create(user, callback);
-    }
-};
+    module.exports = {
+        create: function(user, callback) {
+            User.create(user, callback);
+        }
+    };    
+}());

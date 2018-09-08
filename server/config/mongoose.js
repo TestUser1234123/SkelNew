@@ -1,22 +1,26 @@
-var mongoose = require('mongoose'),
-    UserModel = require('../data/models/User');
+(function() {
+    'use strict';
 
-module.exports = function(config) {
-    mongoose.connect(config.db, { useNewUrlParser: true });
-    var db = mongoose.connection;
+    let mongoose = require('mongoose'),
+        UserModel = require('../data/models/User');
 
-    db.once('open', function(err) {
-        if (err) {
-            console.log('Database could not be opened: ' + err);
-            return;
-        }
+    module.exports = function(config) {
+        mongoose.connect(config.db, { useNewUrlParser: true });
+        var db = mongoose.connection;
 
-        console.log('Database up and running...')
-    });
+        db.once('open', function(err) {
+            if (err) {
+                console.log('Database could not be opened: ' + err);
+                return;
+            }
 
-    db.on('error', function(err){
-        console.log('Database error: ' + err);
-    });
+            console.log('Database up and running...')
+        });
 
-    UserModel.init();
-};
+        db.on('error', function(err){
+            console.log('Database error: ' + err);
+        });
+
+        UserModel.init();
+    };
+}());

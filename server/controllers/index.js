@@ -1,5 +1,9 @@
-var UsersController = require('./UsersController');
+(function() {
+    'use strict';
+    
+    let UsersController = require('./UsersController');
 
-module.exports = {
-    users: UsersController
-};
+    module.exports = {
+        users: UsersController
+    };
+}());
